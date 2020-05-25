@@ -1,0 +1,821 @@
+Archive member included because of file (symbol)
+
+gcc-libgcc.a(_udivsi3.o)      disp_direct.o (__aeabi_uidiv)
+gcc-libgcc.a(_divsi3.o)       disp_direct.o (__aeabi_idiv)
+gcc-libgcc.a(_dvmd_tls.o)     gcc-libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+dietlibc.a(snprintf.o)        disp_direct.o (snprintf)
+dietlibc.a(vsnprintf.o)       reboot.o (vsnprintf)
+dietlibc.a(__v_printf.o)      dietlibc.a(vsnprintf.o) (__v_printf)
+dietlibc.a(__ltostr.o)        dietlibc.a(__v_printf.o) (__ltostr)
+dietlibc.a(strtol.o)          dietlibc.a(__v_printf.o) (strtol)
+dietlibc.a(strtoul.o)         dietlibc.a(__v_printf.o) (strtoul)
+dietlibc.a(memmove.o)         dietlibc.a(__ltostr.o) (memmove)
+dietlibc.a(isalnum.o)         dietlibc.a(strtol.o) (isalnum)
+dietlibc.a(isspace.o)         dietlibc.a(strtol.o) (isspace)
+dietlibc.a(isxdigit.o)        dietlibc.a(strtoul.o) (isxdigit)
+dietlibc.a(errno.o)           dietlibc.a(strtoul.o) (errno)
+dietlibc.a(errno_location.o)  dietlibc.a(strtol.o) (__errno_location)
+newlib-libc.a(lib_a-memcpy-stub.o)
+                              disp_direct.o (memcpy)
+newlib-libc.a(lib_a-memset.o)
+                              disp_direct.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+allocated_mem       0x4               malloc.o
+boot_drive          0x1               reboot.o
+mcb_count           0x4               malloc.o
+max_mem             0x4               malloc.o
+sd_ctx              0x8               reboot.o
+mem_start_p         0x4               malloc.o
+heap_end            0x4               malloc.o
+
+Discarded input sections
+
+ .gnu.warning.__v_printf
+                0x00000000        0x0 dietlibc.a(__v_printf.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .text set to 0x40800000
+LOAD reboot.o
+LOAD disp_direct.o
+LOAD font_direct.o
+LOAD strlen.o
+LOAD strcmp.o
+LOAD gcc-libgcc.a
+LOAD md5.o
+LOAD led_dump.o
+LOAD prop_diag.o
+LOAD malloc.o
+LOAD asm.o
+LOAD footer.o
+LOAD dietlibc.a
+LOAD newlib-libc.a
+LOAD newlib-libm.a
+                0x00008000                PROVIDE (__executable_start, 0x8000)
+                0x00008000                . = 0x8000
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn        0x00008000        0x0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+                0x00008000                PROVIDE (__rel_iplt_start, .)
+ *(.rel.iplt)
+ .rel.iplt      0x00000000        0x0 reboot.o
+                0x00008000                PROVIDE (__rel_iplt_end, .)
+                0x00008000                PROVIDE (__rela_iplt_start, .)
+                0x00008000                PROVIDE (__rela_iplt_end, .)
+
+.rela.dyn       0x00008000        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                0x00008000                PROVIDE (__rel_iplt_start, .)
+                0x00008000                PROVIDE (__rel_iplt_end, .)
+                0x00008000                PROVIDE (__rela_iplt_start, .)
+ *(.rela.iplt)
+                0x00008000                PROVIDE (__rela_iplt_end, .)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(SORT(.init))
+
+.plt
+ *(.plt)
+
+.iplt           0x00008000        0x0
+ *(.iplt)
+ .iplt          0x00000000        0x0 reboot.o
+
+.text           0x40800000     0x422c
+ *(.text.unlikely .text.*_unlikely)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x40800000      0x240 reboot.o
+                0x40800000                _start
+                0x40800014                _vec_data_abort
+                0x40800030                _dat_data_abort
+                0x40800034                led_on
+                0x4080004c                led_off
+                0x40800064                print_line
+                0x408000cc                printf
+                0x40800114                get_model_id
+                0x40800168                is_digic6
+                0x4080018c                is_vxworks
+                0x408001b0                cstart
+ .text          0x40800240      0x9c0 disp_direct.o
+                0x40800240                disp_init_dummy
+                0x40800244                disp_get_other_bmp
+                0x40800260                disp_get_active_bmp
+                0x4080027c                disp_set_pixel_other
+                0x408002fc                disp_set_pixel
+                0x4080037c                disp_set_rgb_pixel
+                0x40800598                disp_fill_other
+                0x40800614                disp_fill
+                0x40800690                disp_fill_yuv_gradient
+                0x40800724                disp_progress
+                0x40800814                disp_init_autodetect
+                0x408008b8                disp_set_buf
+                0x40800990                disp_swap
+                0x408009a4                disp_init
+                0x40800b7c                disp_direct_scroll_up
+ .text          0x40800c00      0x170 font_direct.o
+                0x40800c00                font_put_pixel
+                0x40800c04                font_draw
+ .text          0x40800d70       0x1c strlen.o
+                0x40800d70                strlen
+ .text          0x40800d8c       0x30 strcmp.o
+                0x40800d8c                strcoll
+                0x40800d8c                strcmp
+ .text          0x40800dbc      0x114 gcc-libgcc.a(_udivsi3.o)
+                0x40800dbc                __udivsi3
+                0x40800dbc                __aeabi_uidiv
+                0x40800eb0                __aeabi_uidivmod
+ .text          0x40800ed0      0x148 gcc-libgcc.a(_divsi3.o)
+                0x40800ed0                __aeabi_idiv
+                0x40800ed0                __divsi3
+                0x40800ff8                __aeabi_idivmod
+ .text          0x40801018        0x4 gcc-libgcc.a(_dvmd_tls.o)
+                0x40801018                __aeabi_ldiv0
+                0x40801018                __aeabi_idiv0
+ .text          0x4080101c     0x1050 md5.o
+                0x4080101c                md5_init
+                0x40801028                md5_free
+                0x4080104c                md5_starts
+                0x4080108c                md5_process
+                0x40801d28                md5_update
+                0x40801d34                md5_finish
+                0x40801e54                md5
+                0x40801ea4                md5_hmac_starts
+                0x40801f78                md5_hmac_update
+                0x40801f7c                md5_hmac_finish
+                0x40801ff0                md5_hmac_reset
+                0x40802010                md5_hmac
+ *fill*         0x4080206c        0x4 
+ .text          0x40802070      0x740 led_dump.o
+                0x40802070                send_word
+                0x40802274                send_half
+                0x40802380                block_empty
+                0x408023b0                send_data
+                0x40802454                led_dump
+ .text          0x408027b0      0x520 prop_diag.o
+                0x40802bd8                prop_diag
+ .text          0x40802cd0      0x17c malloc.o
+                0x40802cd0                malloc_init
+                0x40802d1c                malloc
+                0x40802e04                free
+ *fill*         0x40802e4c        0x4 
+ .text          0x40802e50      0x3c0 asm.o
+                0x40802e50                asm_guess_func_name_from_string
+                0x40802eec                locate_func_start
+                0x40802f20                find_func_called_before_string_ref
+                0x40802fc4                find_func_from_string
+                0x40803054                find_string_ref
+                0x408030bc                find_func_called_after_string_ref
+ .text          0x40803210        0x0 footer.o
+ .text          0x40803210       0x24 dietlibc.a(snprintf.o)
+                0x40803210                snprintf
+ .text          0x40803234       0xfc dietlibc.a(vsnprintf.o)
+                0x4080329c                vsnprintf
+ .text          0x40803330      0x7f4 dietlibc.a(__v_printf.o)
+                0x408033ec                __v_printf
+ .text          0x40803b24       0xbc dietlibc.a(__ltostr.o)
+                0x40803b24                __ltostr
+ .text          0x40803be0       0xdc dietlibc.a(strtol.o)
+                0x40803be0                strtol
+ .text          0x40803cbc      0x19c dietlibc.a(strtoul.o)
+                0x40803cbc                strtoul
+ .text          0x40803e58       0x68 dietlibc.a(memmove.o)
+                0x40803e58                memmove
+ .text          0x40803ec0       0x2c dietlibc.a(isalnum.o)
+                0x40803ec0                isalnum
+ .text          0x40803eec       0x18 dietlibc.a(isspace.o)
+                0x40803eec                isspace
+                0x40803eec                __isspace_ascii
+ .text          0x40803f04       0x2c dietlibc.a(isxdigit.o)
+                0x40803f04                isxdigit
+                0x40803f04                __isxdigit_ascii
+ .text          0x40803f30        0x0 dietlibc.a(errno.o)
+ .text          0x40803f30        0xc dietlibc.a(errno_location.o)
+                0x40803f30                __errno_location
+ .text          0x40803f3c      0x168 newlib-libc.a(lib_a-memcpy-stub.o)
+                0x40803f3c                memcpy
+ .text          0x408040a4      0x188 newlib-libc.a(lib_a-memset.o)
+                0x408040a4                memset
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+ *(.v4_bx)
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.fini
+ *(SORT(.fini))
+                0x4080422c                PROVIDE (__etext, .)
+                0x4080422c                PROVIDE (_etext, .)
+                0x4080422c                PROVIDE (etext, .)
+
+.rodata         0x4080422c      0x7f2
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x4080422c       0x48 disp_direct.o
+                0x4080426c                PALETTE_REG_5D4
+                0x40804270                BMP_BUF_REG_5D4
+ .rodata.str1.1
+                0x40804274       0x5d disp_direct.o
+ .rodata        0x408042d1      0x360 font_direct.o
+ .rodata        0x40804631       0x40 md5.o
+ *fill*         0x40804671        0x1 
+ .rodata        0x40804672      0x200 led_dump.o
+ .rodata.str1.1
+                0x40804872      0x14f prop_diag.o
+                                0x158 (size before relaxing)
+ .rodata.str1.1
+                0x408049c1       0x36 asm.o
+                                 0x37 (size before relaxing)
+ .rodata        0x408049f7       0x20 dietlibc.a(__v_printf.o)
+ .rodata.str1.1
+                0x40804a17        0x7 dietlibc.a(__v_printf.o)
+
+.rodata1
+ *(.rodata1)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x40804a1e                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x40804a1e                PROVIDE (__exidx_end, .)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x4080ca1e                . = (ALIGN (0x8000) + (. & 0x7fff))
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x4080ca1e        0x0
+                0x4080ca1e                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x4080ca1e                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x4080ca1e        0x0
+                0x4080ca1e                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x4080ca1e                PROVIDE (__init_array_end, .)
+
+.fini_array     0x4080ca1e        0x0
+                0x4080ca1e                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+                0x4080ca1e                PROVIDE (__fini_array_end, .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+
+.got            0x4080ca20        0x0
+ *(.got.plt)
+ *(.igot.plt)
+ .igot.plt      0x00000000        0x0 reboot.o
+ *(.got)
+ *(.igot)
+
+.data           0x4080ca20       0xe0
+                0x4080ca20                __data_start = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x4080ca20        0x8 reboot.o
+                0x4080ca20                print_y
+                0x4080ca24                print_x
+ .data          0x4080ca28       0x24 disp_direct.o
+ .data          0x4080ca4c        0x0 font_direct.o
+ .data          0x4080ca4c        0x0 strlen.o
+ .data          0x4080ca4c        0x0 strcmp.o
+ .data          0x4080ca4c        0x0 gcc-libgcc.a(_udivsi3.o)
+ .data          0x4080ca4c        0x0 gcc-libgcc.a(_divsi3.o)
+ .data          0x4080ca4c        0x0 gcc-libgcc.a(_dvmd_tls.o)
+ .data          0x4080ca4c        0x0 md5.o
+ .data          0x4080ca4c        0x0 led_dump.o
+ .data          0x4080ca4c       0x7c prop_diag.o
+                0x4080ca4c                levels
+                0x4080ca9c                cam_info
+ .data          0x4080cac8        0x0 malloc.o
+ .data          0x4080cac8        0x0 asm.o
+ *fill*         0x4080cac8       0x18 
+ .data          0x4080cae0       0x20 footer.o
+                0x4080caf8                autoexec_bin_footer
+                0x4080cb00                autoexec_bin_checksum_end
+ .data          0x4080cb00        0x0 dietlibc.a(snprintf.o)
+ .data          0x4080cb00        0x0 dietlibc.a(vsnprintf.o)
+ .data          0x4080cb00        0x0 dietlibc.a(__v_printf.o)
+ .data          0x4080cb00        0x0 dietlibc.a(__ltostr.o)
+ .data          0x4080cb00        0x0 dietlibc.a(strtol.o)
+ .data          0x4080cb00        0x0 dietlibc.a(strtoul.o)
+ .data          0x4080cb00        0x0 dietlibc.a(memmove.o)
+ .data          0x4080cb00        0x0 dietlibc.a(isalnum.o)
+ .data          0x4080cb00        0x0 dietlibc.a(isspace.o)
+ .data          0x4080cb00        0x0 dietlibc.a(isxdigit.o)
+ .data          0x4080cb00        0x0 dietlibc.a(errno.o)
+ .data          0x4080cb00        0x0 dietlibc.a(errno_location.o)
+ .data          0x4080cb00        0x0 newlib-libc.a(lib_a-memcpy-stub.o)
+ .data          0x4080cb00        0x0 newlib-libc.a(lib_a-memset.o)
+
+.data1
+ *(.data1)
+                0x4080cb00                _edata = .
+                0x4080cb00                PROVIDE (edata, .)
+                0x4080cb00                . = .
+                0x4080cb00                __bss_start = .
+                0x4080cb00                __bss_start__ = .
+
+.bss            0x4080cb00      0x220
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x4080cb00        0x0 reboot.o
+ .bss           0x4080cb00       0x50 disp_direct.o
+ .bss           0x4080cb50        0x0 font_direct.o
+ .bss           0x4080cb50        0x0 strlen.o
+ .bss           0x4080cb50        0x0 strcmp.o
+ .bss           0x4080cb50        0x0 gcc-libgcc.a(_udivsi3.o)
+ .bss           0x4080cb50        0x0 gcc-libgcc.a(_divsi3.o)
+ .bss           0x4080cb50        0x0 gcc-libgcc.a(_dvmd_tls.o)
+ .bss           0x4080cb50        0x0 md5.o
+ .bss           0x4080cb50        0x0 led_dump.o
+ .bss           0x4080cb50        0x0 prop_diag.o
+ .bss           0x4080cb50        0x0 malloc.o
+ .bss           0x4080cb50        0x0 asm.o
+ .bss           0x4080cb50        0x0 footer.o
+ .bss           0x4080cb50        0x0 dietlibc.a(snprintf.o)
+ .bss           0x4080cb50        0x0 dietlibc.a(vsnprintf.o)
+ .bss           0x4080cb50        0x0 dietlibc.a(__v_printf.o)
+ .bss           0x4080cb50        0x0 dietlibc.a(__ltostr.o)
+ .bss           0x4080cb50        0x0 dietlibc.a(strtol.o)
+ .bss           0x4080cb50        0x0 dietlibc.a(strtoul.o)
+ .bss           0x4080cb50        0x0 dietlibc.a(memmove.o)
+ .bss           0x4080cb50        0x0 dietlibc.a(isalnum.o)
+ .bss           0x4080cb50        0x0 dietlibc.a(isspace.o)
+ .bss           0x4080cb50        0x0 dietlibc.a(isxdigit.o)
+ *fill*         0x4080cb50       0xb0 
+ .bss           0x4080cc00      0x100 dietlibc.a(errno.o)
+                0x4080cc00                errno
+ .bss           0x4080cd00        0x0 dietlibc.a(errno_location.o)
+ .bss           0x4080cd00        0x0 newlib-libc.a(lib_a-memcpy-stub.o)
+ .bss           0x4080cd00        0x0 newlib-libc.a(lib_a-memset.o)
+ *(COMMON)
+ COMMON         0x4080cd00        0xc reboot.o
+                0x4080cd00                boot_drive
+                0x4080cd04                sd_ctx
+ COMMON         0x4080cd0c       0x14 malloc.o
+                0x4080cd0c                allocated_mem
+                0x4080cd10                mcb_count
+                0x4080cd14                max_mem
+                0x4080cd18                mem_start_p
+                0x4080cd1c                heap_end
+                0x4080cd20                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x4080cd20                _bss_end__ = .
+                0x4080cd20                __bss_end__ = .
+                0x4080cd20                . = ALIGN (0x4)
+                0x4080cd20                . = ALIGN (0x4)
+                0x4080cd20                __end__ = .
+                0x4080cd20                _end = .
+                0x4080cd20                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0xe0
+ *(.comment)
+ .comment       0x00000000       0x70 reboot.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 disp_direct.o
+ .comment       0x00000000       0x71 font_direct.o
+ .comment       0x00000000       0x71 md5.o
+ .comment       0x00000000       0x71 led_dump.o
+ .comment       0x00000000       0x71 prop_diag.o
+ .comment       0x00000000       0x71 malloc.o
+ .comment       0x00000000       0x71 asm.o
+ .comment       0x00000000       0x71 footer.o
+ .comment       0x00000070       0x70 newlib-libc.a(lib_a-memcpy-stub.o)
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 newlib-libc.a(lib_a-memset.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x40
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 newlib-libc.a(lib_a-memcpy-stub.o)
+ .debug_aranges
+                0x00000020       0x20 newlib-libc.a(lib_a-memset.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000      0x246
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x130 newlib-libc.a(lib_a-memcpy-stub.o)
+ .debug_info    0x00000130      0x116 newlib-libc.a(lib_a-memset.o)
+
+.debug_abbrev   0x00000000      0x126
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x99 newlib-libc.a(lib_a-memcpy-stub.o)
+ .debug_abbrev  0x00000099       0x8d newlib-libc.a(lib_a-memset.o)
+
+.debug_line     0x00000000      0x318
+ *(.debug_line)
+ .debug_line    0x00000000      0x197 newlib-libc.a(lib_a-memcpy-stub.o)
+ .debug_line    0x00000197      0x181 newlib-libc.a(lib_a-memset.o)
+
+.debug_frame    0x00000000       0xa0
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x20 gcc-libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000020       0x20 gcc-libgcc.a(_divsi3.o)
+ .debug_frame   0x00000040       0x30 newlib-libc.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00000070       0x30 newlib-libc.a(lib_a-memset.o)
+
+.debug_str      0x00000000      0x1c9
+ *(.debug_str)
+ .debug_str     0x00000000      0x147 newlib-libc.a(lib_a-memcpy-stub.o)
+                                0x180 (size before relaxing)
+ .debug_str     0x00000147       0x82 newlib-libc.a(lib_a-memset.o)
+                                0x15b (size before relaxing)
+
+.debug_loc      0x00000000      0x414
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x1ed newlib-libc.a(lib_a-memcpy-stub.o)
+ .debug_loc     0x000001ed      0x227 newlib-libc.a(lib_a-memset.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+
+.stack          0x00080000        0x0
+                0x00080000                _stack = .
+ *(.stack)
+
+.ARM.attributes
+                0x00000000       0x29
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x27 reboot.o
+ .ARM.attributes
+                0x00000027       0x27 disp_direct.o
+ .ARM.attributes
+                0x0000004e       0x27 font_direct.o
+ .ARM.attributes
+                0x00000075       0x14 strlen.o
+ .ARM.attributes
+                0x00000089       0x30 strcmp.o
+ .ARM.attributes
+                0x000000b9       0x18 gcc-libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000000d1       0x18 gcc-libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x000000e9       0x18 gcc-libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000101       0x27 md5.o
+ .ARM.attributes
+                0x00000128       0x27 led_dump.o
+ .ARM.attributes
+                0x0000014f       0x27 prop_diag.o
+ .ARM.attributes
+                0x00000176       0x27 malloc.o
+ .ARM.attributes
+                0x0000019d       0x27 asm.o
+ .ARM.attributes
+                0x000001c4       0x27 footer.o
+ .ARM.attributes
+                0x000001eb       0x30 dietlibc.a(snprintf.o)
+ .ARM.attributes
+                0x0000021b       0x30 dietlibc.a(vsnprintf.o)
+ .ARM.attributes
+                0x0000024b       0x30 dietlibc.a(__v_printf.o)
+ .ARM.attributes
+                0x0000027b       0x30 dietlibc.a(__ltostr.o)
+ .ARM.attributes
+                0x000002ab       0x30 dietlibc.a(strtol.o)
+ .ARM.attributes
+                0x000002db       0x30 dietlibc.a(strtoul.o)
+ .ARM.attributes
+                0x0000030b       0x30 dietlibc.a(memmove.o)
+ .ARM.attributes
+                0x0000033b       0x30 dietlibc.a(isalnum.o)
+ .ARM.attributes
+                0x0000036b       0x30 dietlibc.a(isspace.o)
+ .ARM.attributes
+                0x0000039b       0x30 dietlibc.a(isxdigit.o)
+ .ARM.attributes
+                0x000003cb       0x14 dietlibc.a(errno.o)
+ .ARM.attributes
+                0x000003df       0x30 dietlibc.a(errno_location.o)
+ .ARM.attributes
+                0x0000040f       0x30 newlib-libc.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x0000043f       0x30 newlib-libc.a(lib_a-memset.o)
+ *(.gnu.attributes)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(autoexec elf32-littlearm)
+
+Cross Reference Table
+
+Symbol                                            File
+BMP_BUF_REG_5D4                                   disp_direct.o
+PALETTE_REG_5D4                                   disp_direct.o
+__aeabi_idiv                                      gcc-libgcc.a(_divsi3.o)
+                                                  disp_direct.o
+__aeabi_idiv0                                     gcc-libgcc.a(_dvmd_tls.o)
+                                                  gcc-libgcc.a(_divsi3.o)
+                                                  gcc-libgcc.a(_udivsi3.o)
+__aeabi_idivmod                                   gcc-libgcc.a(_divsi3.o)
+__aeabi_ldiv0                                     gcc-libgcc.a(_dvmd_tls.o)
+__aeabi_uidiv                                     gcc-libgcc.a(_udivsi3.o)
+                                                  dietlibc.a(__ltostr.o)
+                                                  font_direct.o
+                                                  disp_direct.o
+__aeabi_uidivmod                                  gcc-libgcc.a(_udivsi3.o)
+                                                  dietlibc.a(__ltostr.o)
+                                                  disp_direct.o
+__divsi3                                          gcc-libgcc.a(_divsi3.o)
+__errno_location                                  dietlibc.a(errno_location.o)
+                                                  dietlibc.a(strtol.o)
+__isspace_ascii                                   dietlibc.a(isspace.o)
+__isxdigit_ascii                                  dietlibc.a(isxdigit.o)
+__ltostr                                          dietlibc.a(__ltostr.o)
+                                                  dietlibc.a(__v_printf.o)
+__udivsi3                                         gcc-libgcc.a(_udivsi3.o)
+__v_printf                                        dietlibc.a(__v_printf.o)
+                                                  dietlibc.a(vsnprintf.o)
+_dat_data_abort                                   reboot.o
+_start                                            reboot.o
+_vec_data_abort                                   reboot.o
+allocated_mem                                     malloc.o
+asm_guess_func_name_from_string                   asm.o
+autoexec_bin_checksum_end                         footer.o
+autoexec_bin_footer                               footer.o
+block_empty                                       led_dump.o
+boot_drive                                        reboot.o
+cam_info                                          prop_diag.o
+cstart                                            reboot.o
+disp_direct_scroll_up                             disp_direct.o
+                                                  reboot.o
+disp_fill                                         disp_direct.o
+disp_fill_other                                   disp_direct.o
+disp_fill_yuv_gradient                            disp_direct.o
+disp_get_active_bmp                               disp_direct.o
+disp_get_other_bmp                                disp_direct.o
+disp_init                                         disp_direct.o
+                                                  reboot.o
+disp_init_autodetect                              disp_direct.o
+disp_init_dummy                                   disp_direct.o
+disp_progress                                     disp_direct.o
+disp_set_buf                                      disp_direct.o
+disp_set_pixel                                    disp_direct.o
+                                                  font_direct.o
+disp_set_pixel_other                              disp_direct.o
+disp_set_rgb_pixel                                disp_direct.o
+disp_swap                                         disp_direct.o
+errno                                             dietlibc.a(errno.o)
+                                                  dietlibc.a(errno_location.o)
+                                                  dietlibc.a(strtoul.o)
+find_func_called_after_string_ref                 asm.o
+find_func_called_before_string_ref                asm.o
+                                                  disp_direct.o
+find_func_from_string                             asm.o
+find_string_ref                                   asm.o
+font_draw                                         font_direct.o
+                                                  disp_direct.o
+                                                  reboot.o
+font_put_pixel                                    font_direct.o
+free                                              malloc.o
+get_model_id                                      reboot.o
+                                                  disp_direct.o
+heap_end                                          malloc.o
+is_digic6                                         reboot.o
+                                                  disp_direct.o
+is_vxworks                                        reboot.o
+                                                  disp_direct.o
+isalnum                                           dietlibc.a(isalnum.o)
+                                                  dietlibc.a(strtol.o)
+isspace                                           dietlibc.a(isspace.o)
+                                                  dietlibc.a(strtoul.o)
+                                                  dietlibc.a(strtol.o)
+isxdigit                                          dietlibc.a(isxdigit.o)
+                                                  dietlibc.a(strtoul.o)
+led_dump                                          led_dump.o
+led_off                                           reboot.o
+                                                  led_dump.o
+led_on                                            reboot.o
+                                                  led_dump.o
+levels                                            prop_diag.o
+locate_func_start                                 asm.o
+malloc                                            malloc.o
+malloc_init                                       malloc.o
+max_mem                                           malloc.o
+mcb_count                                         malloc.o
+md5                                               md5.o
+md5_finish                                        md5.o
+md5_free                                          md5.o
+md5_hmac                                          md5.o
+md5_hmac_finish                                   md5.o
+md5_hmac_reset                                    md5.o
+md5_hmac_starts                                   md5.o
+md5_hmac_update                                   md5.o
+md5_init                                          md5.o
+md5_process                                       md5.o
+md5_starts                                        md5.o
+md5_update                                        md5.o
+mem_start_p                                       malloc.o
+memcpy                                            newlib-libc.a(lib_a-memcpy-stub.o)
+                                                  dietlibc.a(vsnprintf.o)
+                                                  md5.o
+                                                  disp_direct.o
+memmove                                           dietlibc.a(memmove.o)
+                                                  dietlibc.a(__ltostr.o)
+memset                                            newlib-libc.a(lib_a-memset.o)
+                                                  malloc.o
+                                                  md5.o
+                                                  disp_direct.o
+print_line                                        reboot.o
+print_x                                           reboot.o
+print_y                                           reboot.o
+printf                                            reboot.o
+                                                  asm.o
+                                                  prop_diag.o
+prop_diag                                         prop_diag.o
+sd_ctx                                            reboot.o
+send_data                                         led_dump.o
+send_half                                         led_dump.o
+send_word                                         led_dump.o
+snprintf                                          dietlibc.a(snprintf.o)
+                                                  disp_direct.o
+strcmp                                            strcmp.o
+                                                  asm.o
+strcoll                                           strcmp.o
+strlen                                            strlen.o
+                                                  dietlibc.a(__v_printf.o)
+                                                  asm.o
+                                                  font_direct.o
+strtol                                            dietlibc.a(strtol.o)
+                                                  dietlibc.a(__v_printf.o)
+strtoul                                           dietlibc.a(strtoul.o)
+                                                  dietlibc.a(strtol.o)
+                                                  dietlibc.a(__v_printf.o)
+vsnprintf                                         dietlibc.a(vsnprintf.o)
+                                                  dietlibc.a(snprintf.o)
+                                                  reboot.o
