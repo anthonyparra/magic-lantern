@@ -40,6 +40,7 @@ NSTUB(0xFE0CD214,  init_task)
 /** Tasks **/
 NSTUB(0xFED5A270,  msleep)
 NSTUB(0xFED5A7E8,  task_create)
+DATA_PTR(    0x44D0,  current_interrupt)
 
 /** Interrupts **/
 
